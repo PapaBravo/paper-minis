@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            font-size: 0;
+        }
+
+        section.asset {
+            display: inline-block;
+            vertical-align: top;
+            page-break-inside: avoid;
+        }
+
+        div.image {
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+
+            border: 1px dashed gray;
+
+            width: calc(var(--gridw) * 1in);
+            height: calc(var(--gridh) * 1in);
+        }
+    </style>
+</head>
+
+<body>
+    {{#each .}}
+    <section class="asset">
+        <div class="content">      
+            <div 
+                class="image" 
+                style="background-image: url('{{image}}'); --gridw: {{width}}; --gridh: {{height}}"
+            ></div>
+        </div>
+    </section>
+    {{/each}}
+</body>
+
+</html>
