@@ -1,0 +1,16 @@
+{
+    "assets": [
+        {
+            "image": "assets/frostdruid.png",
+            "size": "Medium"
+        },
+        {
+            "image": "assets/polar-bear.png",
+            "size": "Large"
+        },
+        {
+            "image": "assets/bear.png",
+            "size": "Large"
+        }
+    ]
+}

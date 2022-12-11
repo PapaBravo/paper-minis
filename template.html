@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        section.asset {
+            float: left;
+            page-break-inside: avoid;
+        }
+
+        .height-1 {
+            height: 1in;
+        }
+
+        .height-2 {
+            height: 2in;
+        }
+
+        .height-3 {
+            height: 3in;
+        }
+
+        .width-1 {
+            width: 1in;
+        }
+
+        .width-2 {
+            width: 2in;
+        }
+
+        .width-3 {
+            width: 3in;
+        }
+
+        div.image {
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+
+            border: 1px dashed gray;
+        }
+
+        div.image.back {
+            transform: scaleY(-1);
+        }
+
+        div.glue {
+            height: 0.5in;
+            border: 1px dashed gray;
+        }
+    </style>
+</head>
+
+<body>
+    {{#each .}}
+    <section class="asset">
+        <div class="content">
+            <div class="glue width-{{width}}"></div>
+            <div class="image back height-{{height}} width-{{width}}" style="background-image: url('{{image}}')"></div>
+            <div class="image height-{{height}} width-{{width}}" style="background-image: url('{{image}}')"></div>
+            <div class="glue width-{{width}}"></div>
+        </div>
+    </section>
+    {{/each}}
+</body>
+
+</html>
