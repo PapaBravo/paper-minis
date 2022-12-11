@@ -10,12 +10,15 @@ app.use('/assets', express.static(path.join(__dirname, 'assets')));
 
 app.get('/', function (req, res) {
 
-
     const data = fs.readdirSync('assets')
+        .filter(fn => fn.endsWith('.png'))
         .map(fn => {
             let r = { image: 'assets/' + fn, height: 2, width: 1};
             if (fn.startsWith('large_')) {
                 r.width = 2;
+            }
+            if (fn.startsWith('small_')) {
+                r.height = "1-5";
             }
             return r;
         });
